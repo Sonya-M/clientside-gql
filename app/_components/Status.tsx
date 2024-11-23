@@ -7,9 +7,20 @@ import {
   DropdownTrigger,
 } from '@nextui-org/react'
 import StatusRing from './StatusRing'
+import { useMutation } from '@urql/next'
+import { EditIssueMutation } from '@/gql/editIssueMutation'
 
 const Status = ({ status, issueId }) => {
-  const onAction = async (newStatus: string) => {}
+  const [{ data, error, fetching }, editMutation] =
+    useMutation(EditIssueMutation)
+  const onAction = async (newStatus: string) => {
+    await editMutation({
+      input: {
+        id: issueId,
+        status: newStatus,
+      },
+    })
+  }
 
   return (
     <Dropdown
