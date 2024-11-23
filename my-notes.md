@@ -1,0 +1,3 @@
+- [courses notes](https://clumsy-humor-894.notion.site/Client-side-GraphQL-with-React-4248372d51604858aaf9eeb9127b6433)
+- name of the turso db: `playaround-gql` (logged in with github)
+- to get all you db urls, run `turso db list`
